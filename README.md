@@ -91,7 +91,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 * MINOR version when you add functionality in a backward compatible manner
 * PATCH version when you make backward compatible bug fixes
 
-#### Commit Messages Format (to be inforced through Code Review):
+#### Commit Messages Format (to be inforced through Code Review)
 
 To allow automatic versioning, we'll need to follow commit message format.
 
@@ -165,34 +165,26 @@ To do so, we are using docker-compose to setup the DevContainer and the Localsta
   * Lambda handler with API:
     ```shell
     cd services/<service-folder> 
-    poetry install
-    poetry run python ../../packages/scripts/scripts/poetry/export_requirements.py  
     sam build
     sudo sam local start-api --container-host host.docker.internal
-   ```
+    ```
   * Lambda handler without API:
-  ```shell
-  cd services/<service-folder>
-  poetry install
-  poetry run python ../../packages/scripts/scripts/poetry/export_requirements.py  
-  sam build
-  sudo sam local invoke --container-host host.docker.internal
-  ```
+    ```shell
+    cd services/<service-folder>
+    sam build
+    sudo sam local invoke --container-host host.docker.internal
+    ```
 
 * On Linux
   * Lambda handler with API:
   ```shell
   cd services/<service-folder>
-  poetry install
-  poetry run python ../../packages/scripts/scripts/poetry/export_requirements.py  
   sam build
   sudo sam local start-api
   ```
   * Lambda handler without  API:
   ```shell
   cd services/<service-folder>
-  poetry install
-  poetry run python ../../packages/scripts/scripts/poetry/export_requirements.py 
   sam build
   sudo sam local invoke
   ```
